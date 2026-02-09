@@ -1,0 +1,8 @@
+User-agent: *
+# Alle Unterordner ausschließen - nicht indexieren
+Disallow: /Fotos/
+Disallow: /BILDER-ANLEITUNG.md
+
+# Hauptseite erlauben
+Allow: /index.html
+Allow: /
