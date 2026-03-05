@@ -18,7 +18,7 @@ Kopiere die folgenden Fotos aus dem Downloads-Ordner in den `images` Ordner:
    - Ziel: `images/cockpit.jpg`
 
 3. **Maintenance-Bild (Maintenance Sektion)**
-   - Quelle: Ein Bild aus `Hangar` Ordner (z.B. `_MKA2094.jpg` oder `_MKA2111.jpg`)
+   - Quelle: Ein Bild aus `Hangar` Ordner (z.B. `MKA2094.jpg` oder `MKA2111.jpg`)
    - Ziel: `images/maintenance.jpg`
 
 4. **Hangar/Team-Bild (Careers Sektion)**
