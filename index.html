@@ -1,40 +1,38 @@
 <!doctype html>
-<html lang="tr">
+<html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>A GİT FOLDER</title>
+  <title>A GİT FOLDER — Leadwerk</title>
 </head>
+
 <body style="
   margin:0;
   min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  background: radial-gradient(1200px 600px at 20% 10%, rgba(255,255,255,.10), transparent 55%),
-              radial-gradient(900px 500px at 80% 90%, rgba(255,255,255,.08), transparent 60%),
-              #0b1220;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  color:#eaf0ff;
+  color:#eef2ff;
+
+  /* Leadwerk-ish: deep navy + subtle orange accent */
+  background:
+    radial-gradient(1200px 600px at 15% 10%, rgba(255,255,255,.10), transparent 55%),
+    radial-gradient(900px 500px at 85% 90%, rgba(255,255,255,.08), transparent 60%),
+    linear-gradient(180deg, #070b18 0%, #0b1226 45%, #070b18 100%);
 ">
 
   <main style="
-    width:min(920px, 92vw);
-    padding:42px 28px;
+    width:min(980px, 92vw);
+    padding:44px 30px;
     border-radius:22px;
     background: rgba(255,255,255,.06);
     border: 1px solid rgba(255,255,255,.12);
-    box-shadow: 0 18px 60px rgba(0,0,0,.45);
+    box-shadow: 0 18px 60px rgba(0,0,0,.55);
     backdrop-filter: blur(10px);
   ">
-    <div style="
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      align-items:center;
-      justify-content:space-between;
-    ">
-      <div>
+    <header style="display:flex; flex-wrap:wrap; gap:18px; align-items:center; justify-content:space-between;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
         <div style="
           display:inline-flex;
           align-items:center;
@@ -42,76 +40,143 @@
           padding:8px 12px;
           border-radius:999px;
           background: rgba(255,255,255,.08);
-          border:1px solid rgba(255,255,255,.12);
+          border: 1px solid rgba(255,255,255,.12);
           font-size:13px;
           letter-spacing:.25px;
-          color: rgba(234,240,255,.88);
+          color: rgba(238,242,255,.88);
         ">
           <span style="
             width:10px;height:10px;border-radius:50%;
-            background:#32d583; box-shadow: 0 0 0 6px rgba(50,213,131,.15);
+            background:#ff7a18;
+            box-shadow: 0 0 0 6px rgba(255,122,24,.18);
             display:inline-block;
           "></span>
-          Inline CSS • Tek Dosya HTML
+          Leadwerk • Inline-CSS • Einzelseite
         </div>
 
         <h1 style="
-          margin:14px 0 6px;
-          font-size: clamp(34px, 5vw, 54px);
+          margin:0;
+          font-size: clamp(34px, 5vw, 56px);
           line-height: 1.05;
-          letter-spacing: .5px;
-          font-weight: 800;
-        ">
-          A GİT FOLDER
-        </h1>
+          letter-spacing: .4px;
+          font-weight: 850;
+        ">A GİT FOLDER</h1>
 
         <p style="
           margin:0;
-          max-width: 62ch;
-          font-size: 16px;
-          line-height: 1.6;
-          color: rgba(234,240,255,.78);
+          max-width: 68ch;
+          font-size:16px;
+          line-height:1.65;
+          color: rgba(238,242,255,.78);
         ">
-          Bu sayfa tamamen <strong style="color:#fff;">inline CSS</strong> ile hazırlanmıştır.
-          İstersen alttaki butonu tıklayınca bir örnek aksiyon da gösterecek.
+          Diese Seite ist vollständig als <strong style="color:#ffffff;">Inline-HTML</strong> umgesetzt und nutzt ausschließlich
+          <strong style="color:#ffffff;">Inline-CSS</strong> – passend im Leadwerk-Look (dunkel, klar, mit Akzent).
         </p>
       </div>
 
-      <button type="button" onclick="document.getElementById('msg').textContent='✅ Tamam! Inline HTML sayfası çalışıyor.'"
-        style="
-          cursor:pointer;
-          border:none;
-          padding: 12px 16px;
-          border-radius: 14px;
-          font-weight: 700;
-          letter-spacing: .2px;
-          color:#0b1220;
-          background: linear-gradient(135deg, #ffffff, #d7e3ff);
-          box-shadow: 0 10px 28px rgba(0,0,0,.35);
-          transition: transform .12s ease;
-          user-select:none;
-        "
-        onmousedown="this.style.transform='scale(.98)'"
-        onmouseup="this.style.transform='scale(1)'"
-        onmouseleave="this.style.transform='scale(1)'"
-      >
-        Test Et
-      </button>
-    </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <button type="button"
+          onclick="document.getElementById('status').textContent='✅ Erfolgreich! Die Seite läuft und reagiert wie erwartet.'"
+          style="
+            cursor:pointer;
+            border:none;
+            padding:12px 16px;
+            border-radius:14px;
+            font-weight:750;
+            letter-spacing:.2px;
+            color:#0b1226;
+            background: linear-gradient(135deg, #ff7a18, #ffb15a);
+            box-shadow: 0 12px 28px rgba(0,0,0,.45);
+            transition: transform .12s ease;
+            user-select:none;
+          "
+          onmousedown="this.style.transform='scale(.98)'"
+          onmouseup="this.style.transform='scale(1)'"
+          onmouseleave="this.style.transform='scale(1)'"
+        >
+          Test starten
+        </button>
 
-    <div style="
+        <a href="#"
+          onclick="document.getElementById('status').textContent='ℹ️ Hinweis: Link ist ein Platzhalter (Demo).'; return false;"
+          style="
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            padding:12px 16px;
+            border-radius:14px;
+            text-decoration:none;
+            font-weight:700;
+            color: rgba(238,242,255,.92);
+            background: rgba(255,255,255,.08);
+            border: 1px solid rgba(255,255,255,.14);
+          "
+        >
+          Mehr erfahren
+        </a>
+      </div>
+    </header>
+
+    <section style="
       margin-top:22px;
-      padding:16px 16px;
-      border-radius:16px;
-      background: rgba(0,0,0,.22);
-      border: 1px solid rgba(255,255,255,.10);
-      color: rgba(234,240,255,.86);
-      font-size: 14px;
-      line-height: 1.55;
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:14px;
     ">
-      <div style="font-weight:700; margin-bottom:6px;">Durum</div>
-      <div id="msg">Henüz bir işlem yapılmadı.</div>
-    </div>
+      <div style="
+        grid-column: span 7;
+        padding:18px 18px;
+        border-radius:18px;
+        background: rgba(0,0,0,.22);
+        border: 1px solid rgba(255,255,255,.10);
+      ">
+        <div style="font-weight:800; margin-bottom:8px; letter-spacing:.2px;">Status</div>
+        <div id="status" style="color: rgba(238,242,255,.86); font-size:14px; line-height:1.6;">
+          Noch kein Test ausgeführt.
+        </div>
+
+        <div style="margin-top:14px; font-size:13px; line-height:1.6; color: rgba(238,242,255,.65);">
+          Tipp: Speichere diese Datei als <span style="color:#fff; font-weight:700;">index.html</span> und öffne sie im Browser.
+          Alles ist in einer Datei enthalten.
+        </div>
+      </div>
+
+      <div style="
+        grid-column: span 5;
+        padding:18px 18px;
+        border-radius:18px;
+        background: rgba(255,255,255,.06);
+        border: 1px solid rgba(255,255,255,.12);
+      ">
+        <div style="font-weight:800; margin-bottom:10px; letter-spacing:.2px;">Kurze Checkliste</div>
+
+        <ul style="
+          margin:0;
+          padding-left:18px;
+          color: rgba(238,242,255,.78);
+          font-size:14px;
+          line-height:1.75;
+        ">
+          <li>Nur Inline-CSS (keine externen Dateien)</li>
+          <li>Leadwerk-Farbstimmung (Dark + Orange-Akzent)</li>
+          <li>Deutschsprachige Texte</li>
+          <li>Responsives Layout</li>
+        </ul>
+
+        <div style="
+          margin-top:14px;
+          padding:12px 12px;
+          border-radius:14px;
+          border:1px dashed rgba(255,122,24,.55);
+          background: rgba(255,122,24,.10);
+          color: rgba(238,242,255,.86);
+          font-size:13px;
+          line-height:1.6;
+        ">
+          Akzentfarbe: <strong style="color:#fff;">#ff7a18</strong> (Buttons/Highlights)
+        </div>
+      </div>
+    </section>
 
     <footer style="
       margin-top:18px;
@@ -120,11 +185,11 @@
       gap:10px;
       align-items:center;
       justify-content:space-between;
-      color: rgba(234,240,255,.55);
+      color: rgba(238,242,255,.55);
       font-size: 12px;
     ">
-      <span>© 2026 • A GİT FOLDER</span>
-      <span style="opacity:.9;">Tek dosya • Inline CSS</span>
+      <span>© 2026 • Leadwerk Stilseite</span>
+      <span style="opacity:.9;">Ein Datei • Inline CSS • Dark UI</span>
     </footer>
   </main>
 
