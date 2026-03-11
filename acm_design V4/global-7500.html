@@ -74,6 +74,7 @@
 
     *, *::before, *::after { border-width: 0 !important; border-style: none !important; }
     img, input, select, textarea, a, .card-hover, [class*="border"] { border: none !important; border-width: 0 !important; }
+    footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
     button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) { border: none !important; border-width: 0 !important; }
     *, *::before, *::after, img, button, input, select, textarea, a, .card-hover, .btn-primary, [class*="rounded"] { border-radius: 0 !important; }
 
@@ -113,6 +114,13 @@
     .header-nav-link:hover { color: white; }
     .header-scrolled .header-nav-link:hover { color: rgb(28, 25, 23); }
     .header-nav-link:hover::after { width: 100%; }
+
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28, 25, 23, 0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
 
     .header-link-button { color: white; font-weight: 400; font-size: 0.875rem; letter-spacing: 0.02em; position: relative; padding: 0.5rem 1.25rem; background: rgba(255, 255, 255, 0.12); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.18); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); height: auto; display: inline-flex; align-items: center; justify-content: center; }
     .header-link-button:hover { background: rgba(255, 255, 255, 0.18); border-color: rgba(255, 255, 255, 0.25); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); transform: translateY(-1px); }
@@ -597,9 +605,9 @@
     }
     .zone-card-number {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 3rem;
-      font-weight: 300;
-      color: rgba(0, 20, 65, 0.08);
+      font-size: 3.25rem;
+      font-weight: 400;
+      color: rgba(0, 20, 65, 0.28);
       line-height: 1;
       margin-bottom: 0.75rem;
     }
@@ -630,7 +638,7 @@
             <span class="header-lang-sep" aria-hidden="true">|</span>
             <a href="?lang=en" class="header-lang-link" data-lang="en">EN</a>
           </div>
-          <a href="#contact" class="header-link-button whitespace-nowrap">Flug anfragen</a>
+          <a href="kontakt.html#sales-operations" class="header-link-button whitespace-nowrap">Flug anfragen</a>
         </div>
         <a href="index.html" class="acm-logo-link hidden lg:block" aria-label="ACM AIR CHARTER Home">
           <img id="header-logo-img" src="logo.png" alt="ACM AIR CHARTER Logo" class="acm-logo h-12 lg:h-14 w-auto transition-opacity duration-300" style="object-fit: contain; max-width: 160px;" onerror="this.style.display='none'; const f = document.getElementById('header-logo-fallback'); if(f) f.style.display='flex';">
@@ -662,7 +670,15 @@
       <div class="flex items-center justify-center h-14 lg:h-16 relative header-nav-row transition-all duration-400">
         <nav id="desktop-nav" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" aria-label="Main navigation">
           <a href="thats-acm.html" class="header-nav-link">That's ACM</a>
-          <a href="charter.html" class="header-nav-link">Charter</a>
+          <div class="header-nav-charter-wrap">
+            <a href="charter.html" class="header-nav-link">Charter</a>
+            <div class="header-nav-dropdown" aria-label="Charter Untermenü">
+              <a href="charter.html">Charter</a>
+              <a href="global-7500.html">Global 7500</a>
+              <a href="global-6000.html">Global 6000</a>
+              <a href="global-xrs.html">Global XRS</a>
+            </div>
+          </div>
           <a href="aircraft-management.html" class="header-nav-link">Aircraft Management</a>
           <a href="maintenance.html" class="header-nav-link">Maintenance</a>
           <a href="kontakt.html" class="header-nav-link">Kontakt</a>
@@ -700,6 +716,9 @@
       <nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
         <a href="thats-acm.html" class="mobile-menu-link block py-3">That's ACM</a>
         <a href="charter.html" class="mobile-menu-link block py-3">Charter</a>
+        <a href="global-7500.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global 7500</a>
+        <a href="global-6000.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global 6000</a>
+        <a href="global-xrs.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global XRS</a>
         <a href="aircraft-management.html" class="mobile-menu-link block py-3">Aircraft Management</a>
         <a href="maintenance.html" class="mobile-menu-link block py-3">Maintenance</a>
         <a href="kontakt.html" class="mobile-menu-link block py-3">Kontakt</a>
@@ -741,7 +760,7 @@
           Das Flaggschiff der Business Aviation. Maximale Reichweite, vier Kabinenzonen, direkt operiert unter eigenem AOC.
         </p>
         <div class="flex flex-wrap justify-center gap-4 fade-in-up fade-in-up-delay-2">
-          <a href="#contact" class="btn-overlay-white">Flug anfragen</a>
+          <a href="kontakt.html#sales-operations" class="btn-overlay-white">Flug anfragen</a>
         </div>
       </div>
     </section>
@@ -984,7 +1003,7 @@
       <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0, 20, 65, 0.3) 0%, rgba(0, 20, 65, 0.45) 50%, rgba(0, 13, 43, 0.55) 100%);"></div>
       <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 z-10">
         <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl text-white text-center px-6 font-light" style="text-shadow: 0 2px 20px rgba(0,0,0,0.3);">
-          Direkt operiert. Weltweit einsatzbereit.
+          Ohne Grenzen. Ohne Kompromisse.
         </h2>
       </div>
     </section>
@@ -1267,13 +1286,13 @@
       <div class="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center relative z-10">
         <img src="Fotos/Emblem.svg" alt="" class="section-emblem h-[35px] w-auto mx-auto mb-4" width="auto" height="35">
         <h2 class="font-serif text-stone-900 font-light mb-6 scroll-reveal">
-          Planen wir Ihren nächsten Flug.
+          Bereit für Ihren nächsten Flug?
         </h2>
         <p class="text-stone-600 mb-10 max-w-2xl mx-auto text-lg leading-relaxed scroll-reveal">
           Für individuelle Routen, Terminplanung und diskrete Abwicklung steht Ihnen unser Charter-Team direkt zur Verfügung.
         </p>
         <div class="flex flex-wrap justify-center gap-4 scroll-reveal">
-          <a href="mailto:charter@acm.aero" class="btn-primary">
+          <a href="kontakt.html#sales-operations" class="btn-primary">
             Flug anfragen
           </a>
         </div>
@@ -1284,15 +1303,15 @@
 
   <!-- Mobile Sticky CTA -->
   <div id="mobile-sticky-cta" class="mobile-sticky-cta">
-    <a href="mailto:charter@acm.aero" class="btn-primary w-full text-center" style="min-width: 0;">Flug anfragen</a>
+    <a href="kontakt.html#sales-operations" class="btn-primary w-full text-center" style="min-width: 0;">Flug anfragen</a>
   </div>
 
   <!-- FOOTER -->
-  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe border-t border-stone-200">
+  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
         <div class="lg:max-w-sm">
-          <img src="logo.png" alt="ACM AIR CHARTER Logo" class="h-10 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+          <img src="logo.png" alt="ACM AIR CHARTER Logo" class="h-14 w-auto mb-6" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
           <div style="display: none;">
             <span class="font-serif text-2xl text-stone-900 tracking-wide">ACM AIR CHARTER</span>
           </div>

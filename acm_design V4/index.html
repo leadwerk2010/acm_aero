@@ -130,6 +130,7 @@
       border: none !important;
       border-width: 0 !important;
     }
+    footer { border: none !important; background: linear-gradient(to right, transparent 0%, #e7e5e4 10vw, #e7e5e4 90vw, transparent 100%) no-repeat top / 100% 1px, #ffffff !important; }
     /* Buttons: nur Standard-Buttons zurücksetzen, CTA-Buttons ausnehmen */
     button:not(.btn-filled):not(.btn-outline):not(.btn-primary):not(.btn-filled-white):not(.btn-outline-white) {
       border: none !important;
@@ -1026,6 +1027,13 @@
     .header-nav-link:hover::after {
       width: 100%;
     }
+    
+    .header-nav-charter-wrap { position: relative; }
+    .header-nav-dropdown { position: absolute; top: 100%; left: 50%; transform: translateX(-50%); margin-top: 0.5rem; min-width: 11rem; background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(12px); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); border-radius: 6px; padding: 0.5rem 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease; z-index: 50; }
+    .header-nav-charter-wrap:hover .header-nav-dropdown { opacity: 1; visibility: visible; }
+    .header-nav-dropdown a { display: block; padding: 0.5rem 1rem; font-size: 0.8125rem; color: rgba(28, 25, 23, 0.85); transition: color 0.2s ease, background 0.2s ease; white-space: nowrap; }
+    .header-nav-dropdown a:hover { color: var(--color-olive); background: rgba(0, 0, 0, 0.04); }
+    .header-nav-dropdown a:first-child { font-weight: 500; color: rgb(28, 25, 23); }
     
     /* Button - Minimalistisch */
     .header-button {
@@ -2075,7 +2083,7 @@
             <span class="header-lang-sep" aria-hidden="true">|</span>
             <a href="?lang=en" class="header-lang-link" data-lang="en">EN</a>
           </div>
-          <a href="#contact" class="header-link-button whitespace-nowrap">Kontakt aufnehmen</a>
+          <a href="kontakt.html#zentrale" class="header-link-button whitespace-nowrap">Kontakt aufnehmen</a>
         </div>
         
         <a href="#" class="acm-logo-link hidden lg:block" aria-label="ACM AIR CHARTER Home">
@@ -2139,7 +2147,15 @@
         <!-- Desktop Navigation - Mittig (nur wenn nicht gescrollt) -->
         <nav id="desktop-nav" class="hidden lg:flex items-center gap-[10rem] justify-center header-nav-visible" aria-label="Hauptnavigation">
           <a href="thats-acm.html" class="header-nav-link">That's ACM</a>
-          <a href="charter.html" class="header-nav-link">Charter</a>
+          <div class="header-nav-charter-wrap">
+            <a href="charter.html" class="header-nav-link">Charter</a>
+            <div class="header-nav-dropdown" aria-label="Charter Untermenü">
+              <a href="charter.html">Charter</a>
+              <a href="global-7500.html">Global 7500</a>
+              <a href="global-6000.html">Global 6000</a>
+              <a href="global-xrs.html">Global XRS</a>
+            </div>
+          </div>
           <a href="aircraft-management.html" class="header-nav-link">Aircraft Management</a>
           <a href="maintenance.html" class="header-nav-link">Maintenance</a>
           <a href="kontakt.html" class="header-nav-link">Kontakt</a>
@@ -2190,6 +2206,9 @@
       <nav class="max-w-7xl mx-auto px-6 py-6 space-y-1 mobile-menu-nav">
         <a href="thats-acm.html" class="mobile-menu-link block py-3">That's ACM</a>
         <a href="charter.html" class="mobile-menu-link block py-3">Charter</a>
+        <a href="global-7500.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global 7500</a>
+        <a href="global-6000.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global 6000</a>
+        <a href="global-xrs.html" class="mobile-menu-link block py-2 pl-4 text-stone-500" style="font-size: 0.9rem;">Global XRS</a>
         <a href="aircraft-management.html" class="mobile-menu-link block py-3">Aircraft Management</a>
         <a href="maintenance.html" class="mobile-menu-link block py-3">Maintenance</a>
         <a href="karriere.html" class="mobile-menu-link block py-3">Careers</a>
@@ -2273,15 +2292,15 @@
               <p class="text-stone-500 mb-5 leading-relaxed text-[15px]">
                 Flexible Privatflüge mit höchsten Sicherheitsstandards. Individuelle Routenplanung, diskret und zuverlässig – wann und wohin Sie möchten.
               </p>
-              <button 
-                onclick="openModal('flight-modal')"
+              <a 
+                href="kontakt.html#sales-operations"
                 class="link-arrow mt-auto"
               >
                 <span>Charter anfragen</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
 
@@ -2329,15 +2348,15 @@
               <p class="text-stone-500 mb-5 leading-relaxed text-[15px]">
                 Part-145 zertifizierte Wartung, CAMO-Services und 24/7 AOG-Support. Planbare Turnaround-Zeiten und transparente SLAs.
               </p>
-              <button
-                onclick="openModal('maintenance-modal')"
+              <a
+                href="kontakt.html#maintenance"
                 class="link-arrow mt-auto"
               >
                 <span>Maintenance anfragen</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
                 </svg>
-              </button>
+              </a>
             </div>
           </article>
         </div>
@@ -2422,7 +2441,7 @@
               <a href="#" class="btn-primary inline-flex items-center justify-center">
                 Mehr über ACM
               </a>
-              <a href="mailto:info@acm.aero" class="btn-outline inline-flex items-center justify-center">
+              <a href="kontakt.html#zentrale" class="btn-outline inline-flex items-center justify-center">
                 Kontakt aufnehmen
               </a>
             </div>
@@ -2727,7 +2746,7 @@
   <!-- ============================================
        12. FOOTER - Jumeirah Style (Clean & Minimal)
        ============================================ -->
-  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe border-t border-stone-200">
+  <footer class="bg-white text-stone-600 pt-16 sm:pt-20 pb-10 footer-safe">
     <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
       <!-- Top Section: Logo + Newsletter -->
       <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-10 lg:gap-16 mb-14 lg:mb-16">
@@ -2736,7 +2755,7 @@
           <img 
             src="logo.png" 
             alt="ACM AIR CHARTER Logo" 
-            class="h-10 w-auto mb-6"
+            class="h-14 w-auto mb-6"
             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
           >
           <div style="display: none;">
@@ -3144,7 +3163,7 @@
           <p class="starlink-teaser">
             Starlink ist das Satelliten-Internet von SpaceX speziell für Business Jets: hohe Geschwindigkeit, 4K-Streaming und stabile Verbindung weltweit – auch über den Polarrouten. ACM ist autorisierter Reseller und Installationspartner.
           </p>
-          <a href="#" onclick="closeModal('starlink-modal'); openModal('maintenance-modal'); return false;" class="starlink-cta">Installation anfragen</a>
+          <a href="kontakt.html#maintenance" class="starlink-cta">Installation anfragen</a>
           <p class="starlink-aircraft">
             <span>Gulfstream</span><span>Bombardier</span><span>Dassault</span><span>Embraer</span><span>Textron</span>
           </p>
